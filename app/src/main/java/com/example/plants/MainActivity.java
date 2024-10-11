@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.plants.ui.fragments.MedicalPlantsFragment;
+import com.example.plants.ui.fragments.MedicalPlantFragment;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, new MedicalPlantsFragment())
+                    .replace(R.id.container, new MedicalPlantFragment())
                     .commitNow();
         }
     }
