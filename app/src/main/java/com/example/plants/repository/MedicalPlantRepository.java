@@ -23,8 +23,16 @@ public class MedicalPlantRepository {
     }
 
     public LiveData<List<MedicalPlant>> getAllMedicalPlants() {
-        Log.d(TAG, "Fetching all medical plants");
+        // افزودن لاگ برای بررسی داده‌ها
+        allMedicalPlants.observeForever(plants -> {
+            for (MedicalPlant plant : plants) {
+                Log.d("MedicalPlantRepository", "Plant ID: " + plant.getId() + ", Name: " + plant.getPlantsName());
+            }
+        });
         return allMedicalPlants;
+    }
+    public LiveData<MedicalPlant> getMedicalPlantById(int plantId) {
+        return medicalPlantDao.getMedicalPlantById(plantId);
     }
 
     public LiveData<Integer> getMedicalPlantCount() {

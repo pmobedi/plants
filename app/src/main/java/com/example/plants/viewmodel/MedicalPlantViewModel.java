@@ -25,4 +25,8 @@ public class MedicalPlantViewModel extends AndroidViewModel {
     public LiveData<Integer> getMedicalPlantCount() {
        return repository.getMedicalPlantCount();
     }
+    // متد برای دریافت گیاه براساس Id
+    public LiveData<MedicalPlant> getMedicalPlantById(int plantId) {
+        return repository.getMedicalPlantById(plantId);
+    }
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,8 +58,11 @@ public class MedicalPlantAdapter extends RecyclerView.Adapter<MedicalPlantAdapte
 
         // Set click listener
         holder.itemView.setOnClickListener(v -> {
+            // اضافه کردن لاگ برای بررسی plantId
+            int plantId = plant.getId();
+            Log.d("MedicalPlantAdapter", "Sending plantId: " + plantId);
             Intent intent = new Intent(context, PlantDetailActivity.class);
-            intent.putExtra("plant_id", plant.getId());  // Sending plant ID
+            intent.putExtra("plantId", plant.getId());  // Sending plant ID
             context.startActivity(intent);
         });
     }

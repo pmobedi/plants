@@ -2,6 +2,7 @@ package com.example.plants.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +43,7 @@ public class MedicalPlantFragment extends Fragment {
         adapter = new MedicalPlantAdapter(new ArrayList<>(), getContext(), new MedicalPlantAdapter.OnPlantClickListener() {
             @Override
             public void onPlantClick(MedicalPlant plant) {
+                Log.d("MedicalPlantFragment", "Sending plantId: " + plant.getId());  // اضافه کردن لاگ برای بررسی مقدار plantId
                 Intent intent = new Intent(getActivity(), PlantDetailActivity.class);
                 intent.putExtra("plantId", plant.getId());
                 startActivity(intent);

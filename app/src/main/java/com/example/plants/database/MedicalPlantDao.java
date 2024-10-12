@@ -14,4 +14,7 @@ public interface MedicalPlantDao {
     @Query("SELECT COUNT(*) FROM MedicalPlants")
     LiveData<Integer> getMedicalPlantCount();
 
+    @Query("SELECT * FROM MedicalPlants WHERE id = :plantId")
+    LiveData<MedicalPlant> getMedicalPlantById(int plantId);
+
 }

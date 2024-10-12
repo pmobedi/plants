@@ -1,8 +1,8 @@
-<!-- fragment_plant_description.xml -->
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
@@ -10,22 +10,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Plant Name"
-        android:textStyle="bold"
         android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
 
     <TextView
         android:id="@+id/scName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Scientific Name"
-        android:layout_marginBottom="8dp"/>
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:layout_marginBottom="8dp" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Description"
-        android:layout_marginBottom="8dp"/>
-
+        android:text="Plant description goes here..."
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp" />
 </LinearLayout>
